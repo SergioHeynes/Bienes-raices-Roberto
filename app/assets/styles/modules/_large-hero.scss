@@ -1,0 +1,26 @@
+.large-hero {
+    background-image: linear-gradient(to right bottom, $color-blue, $color-blue-dark);
+    height: 95vh;
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 8rem;
+        font-size: 3rem;
+        font-family: $font-playfair;
+    }
+
+    &__logo-initials {
+        font-family: $font-montserrat;
+        font-size: 8rem;
+        font-weight: 300;
+        position: absolute;
+        top: 4rem;
+        right: 8rem;
+        transform: translateX(-25%);
+        color: $color-white;
+        background-color: $color-black;
+        margin: 0;
+    }
+
+}
