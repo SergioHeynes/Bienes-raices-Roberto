@@ -411,6 +411,22 @@ template {
   100% {
     transform: rotateZ(-4deg); } }
 
+@-webkit-keyframes fade-in {
+  0% {
+    transform: translateY(-4rem);
+    opacity: 0; }
+  100% {
+    transform: 0;
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(-4rem);
+    opacity: 0; }
+  100% {
+    transform: 0;
+    opacity: 1; } }
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 *,
 *::after,
@@ -493,7 +509,11 @@ img {
 
 .large-hero {
   background-image: linear-gradient(to right bottom, #61B3D2, #217DA0);
-  height: 95vh; }
+  background-size: cover;
+  height: 95vh;
+  -webkit-animation: fade-in 1.7s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: fade-in 1.7s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  opacity: 0; }
   .large-hero__text {
     position: absolute;
     top: 50%;
@@ -513,6 +533,9 @@ img {
     margin: 0; }
 
 .primary_nav {
+  -webkit-animation: fade-in 1.7s 1s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: fade-in 1.7s 1s cubic-bezier(0, 0.5, 0, 1) forwards;
+  opacity: 0;
   padding: 4rem 5%;
   font-size: 1.7rem;
   position: absolute;

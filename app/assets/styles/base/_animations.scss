@@ -3,3 +3,14 @@
       transform: rotateZ(-4deg);
     }
   }
+
+  @keyframes fade-in {
+    0% {
+      transform: translateY(-4rem);
+      opacity: 0;
+    }
+    100% {
+      transform: 0;
+      opacity: 1;
+    }
+  }
