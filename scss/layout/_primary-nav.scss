@@ -1,17 +1,43 @@
 .primary-nav {
-    padding: 2rem 0;
-    font-size: 1.7rem;
-    background-color: $color-red-light;
+    font-size: 1.5rem;
+    font-family: $font-roboto;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    position: relative;
+
+    @include clearfix;
+
+
+    &__left {
+        width: 10%;
+        float: left;
+    }
+
+    &__right {
+        float: left;
+        width: 90%;
+    }
+
+    &__logo {
+        font-size: 2rem;
+        font-weight: 700;
+    }
 
     &__list {
         padding: 0;
         margin: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-transform: uppercase;
     }
 
     &__item {
         display: inline-block;
-        width: 24%;
-        text-align: center;
+
+        &:not(:last-child) {
+            margin-right: 4rem;
+        }
     }
 
     &__link {

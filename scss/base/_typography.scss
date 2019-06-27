@@ -4,3 +4,16 @@ body {
     line-height: 1.5;
     color: $color-black;
 }
+
+.primary-heading {
+    font-family: $font-roboto;
+    font-size: 7rem;
+    font-weight: 300;
+    padding: 0 0 5rem 15rem;
+}
+
+.paragraph {
+    width: 50%;
+    font-size: 2rem;
+    margin-left:25rem; 
+}
