@@ -4,18 +4,19 @@
   "description": "![Header/intro section for the Huddle landing page with single column layout](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass scss/main.scss ./public/styles/styles.css --watch"
   },
   "author": "Sergio Heynes",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
     "normalize-scss": "^7.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2"
+    "node-sass": "^4.12.0"
   }
 }
