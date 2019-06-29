@@ -74,7 +74,8 @@ body {
     margin: 0;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     text-transform: uppercase; }
   .primary-nav__item {
     display: inline-block; }
@@ -85,9 +86,9 @@ body {
     color: #333; }
 
 .large-hero {
-  height: 75rem;
+  height: 80rem;
   width: auto;
-  background-image: url("../../public/images/large-hero1.jpg");
+  background-image: url("/images/large-hero1.jpg");
   position: relative; }
   .large-hero__text-box {
     position: absolute;
@@ -113,7 +114,8 @@ body {
       position: absolute;
       left: 50%;
       bottom: 10%;
-      transform: translateX(-50%); }
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
 
 .presentation {
   padding-top: 15rem;

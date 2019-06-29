@@ -1,15 +1,15 @@
 const gulp = require('gulp'),
-nodemon = require('gulp-nodemon'),
 sass = require('gulp-sass'),
 browserSync = require('browser-sync'),
+nodemon = require('gulp-nodemon'),
 postcss = require('gulp-postcss'),
 autoprefixer = require('autoprefixer');
 
 
 const paths = {
     styles: {
-        src: './scss/**/*.scss',
-        dest: './public/styles/styles.css'
+        src: 'scss/**/*.scss',
+        dest: './public/styles/'
     },
     scripts: {
         src: './app/assets/scripts/**/*.js',
@@ -18,21 +18,7 @@ const paths = {
 };
 
 
-function nodemonTask(cb) {
-    let started = false;
 
-    return nodemon({
-        script: "serve.js"
-    }).on("start", () => {
-        if (!started) {
-            cb();
-            started = true;
-        }
-    });
-}
-
-
-// Styles
 function styles(done) {
     console.log('Starting styles task');
     return gulp.src(paths.styles.src)
@@ -43,34 +29,38 @@ function styles(done) {
         done();
 }
 
-exports.styles = styles;
 
-
-// Scripts
-
-
-// Images
-
-
-// Watch
 function watch() {
-    browserSync.init(
-        // notify: false,
-        null, 
-        {
-            proxy: 'http://localhost:7000',
-            files: ['public/**/*.*'],
-            port: 9000
-        }
-    );
-
     gulp.watch(paths.styles.src, styles);
     gulp.watch('./views/**/*.ejs').on('change', browserSync.reload);
 }
 
-// Build
 
+gulp.task("nodemon", cb => {
+  let started = false;
 
-// Exports
-exports.watch = watch;
+  return nodemon({
+    script: "app.js"
+  }).on("start", () => {
+    if (!started) {
+      cb();
+      started = true;
+    }
+  });
+});
+
+gulp.task(
+  "browser-sync",
+  gulp.series("nodemon", () => {
+    browserSync.init(null, {
+      proxy: "http://localhost:3000",
+      files: ["public/**/*.*"],
+
+      port: 9000
+    });
+  })
+);
+
+gulp.task("serve", 
+    gulp.parallel(gulp.series("browser-sync", () => {}), watch));
 
