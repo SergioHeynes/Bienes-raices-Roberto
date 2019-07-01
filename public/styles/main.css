@@ -420,19 +420,11 @@ ORDER: Base + typograhy > general layout + grid > page layout > components
 
 1em = 16px
 */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
 html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box;
-  background-color: #FF8970; }
+  background-color: #F7F7F7; }
 
 body {
   font-family: "Cabin", sans-serif;
@@ -454,6 +446,44 @@ body {
 .util__wrapper {
   padding-left: 1.8rem;
   padding-right: 1.8rem; }
+
+.grid-container {
+  margin: 0 auto;
+  max-width: 144rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem 4rem; }
+  .grid-container__item {
+    width: 35rem;
+    height: 35rem; }
+
+.box--1 {
+  background-color: cyan; }
+
+.box--2 {
+  background-color: greenyellow; }
+
+.box--3 {
+  background-color: goldenrod; }
+
+.box--4 {
+  background-color: palevioletred; }
+
+.box--5 {
+  background-color: crimson; }
+
+.box--6 {
+  background-color: fuchsia; }
+
+.box--7 {
+  background-color: indigo; }
+
+.box--8 {
+  background-color: lavender; }
+
+.box--9 {
+  background-color: mediumslateblue; }
 
 .primary-nav {
   font-size: 1.5rem;
@@ -523,13 +553,11 @@ body {
               transform: translateX(-50%); }
 
 .presentation {
-  padding-top: 15rem;
-  padding-bottom: 15rem; }
+  padding-top: 8rem;
+  padding-bottom: 8rem; }
 
 .residential {
-  padding-top: 15rem;
-  padding-bottom: 15rem; }
+  padding-bottom: 8rem; }
 
 .commercial {
-  padding-top: 15rem;
-  padding-bottom: 15rem; }
+  padding-bottom: 8rem; }
