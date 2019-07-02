@@ -1,0 +1,22 @@
+.form-property {
+    font-size: 1.6rem;
+    width: 80%;
+    margin: 0 auto;
+
+    &__group {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__input {
+        width: 40%;
+    }
+
+    &__textarea {
+        width: 60%;
+    }
+}

@@ -1,23 +1,9 @@
 const express = require('express');
 
+const storeController = require('../controllers/store');
+
 const router = express.Router();
 
-
-router.get('/', (req, res) => {
-    res.render('store/index');
-});
-
-router.get('/about', (req, res) => {
-    res.render('store/about');
-});
-
-router.get('/contact', (req, res) => {
-    res.render('store/contact');
-});
-
-router.get('/properties-list', (req, res) => {
-    res.render('store/properties-list');
-});
-
+router.get('/', storeController.getProperties);
 
 module.exports = router;

@@ -1,103 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <title>RH | Bienes Raíces</title>
+<%- include('../includes/head.ejs') %>
 
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700|Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8dec48132d.js"></script>
-    <link rel="stylesheet" href="styles/main.css" />
 
-</head>
-<body>
-  <!-- <header>
-    <nav class="primary-nav util__wrapper">
-      <div class="primary-nav__left">
-        <div class="primary-nav__logo">
-          <h1>TuHouse</h1>
-        </div>
-      </div>
-      <div class="primary-nav__right">
-        <ul class="primary-nav__list">
-            <li class="primary-nav__item"><a href="/" class="primary-nav__link">Residencial</a></li>
-            <li class="primary-nav__item"><a href="/properties-list" class="primary-nav__link">Comercial</a></li>
-            <li class="primary-nav__item"><a href="/about" class="primary-nav__link">Nosotros</a></li>
-            <li class="primary-nav__item"><a href="/contact" class="primary-nav__link">Contacto</a></li>
-        </ul>
-      </div>
-    </nav>
+  <%- include('../includes/navigation.ejs') %>
 
-    <main>
-      <section class="large-hero">
-        <div class="large-hero__text-box util__wrapper">
-          <h1 class="large-hero__text">
-            <span class="large-hero__word">Asesoría</span>
-            <span class="large-hero__word">inmobiliaria</span>
-          </h1>
-        </div>
-        <span class="large-hero__down-narrow"><i class="fas fa-chevron-down"></i></span>  
-      </section>
 
-      <section class="presentation">
-        <h1 class="primary-heading">
-          <span>Asesoría inmobiliaria</span>
-        </h1>
-        <p class="paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nam voluptatem fugit inventore magni recusandae rerum numquam quos, veritatis quam harum animi vitae. Ratione voluptates suscipit laborum error tempore autem!
-        </p>
-      </section> -->
   <main>
-    <section class="presentation">
-          <h1 class="primary-heading">
-                <span>Agentes inmobiliarios</span>
-              </h1>
-              <p class="paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nam voluptatem fugit inventore magni recusandae rerum numquam quos, veritatis quam harum animi vitae. Ratione voluptates suscipit laborum error tempore autem!
-              </p>
-    </section>
 
     <section class="residential">
-        <h1 class="primary-heading">
-          <span>Residencial</span>
-        </h1>
-        <p class="paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nam voluptatem fugit inventore magni recusandae rerum numquam quos, veritatis quam harum animi vitae. Ratione voluptates suscipit laborum error tempore autem!
-        </p>
-
-        <div class="grid-container">
-          <div class="grid-container__item box--1">Box 1</div>
-          <div class="grid-container__item box--2">Box 2</div>
-          <div class="grid-container__item box--3">Box 3</div>
-          <div class="grid-container__item box--4">Box 4</div>
-          <div class="grid-container__item box--5">Box 5</div>
-          <div class="grid-container__item box--6">Box 6</div>
-          <div class="grid-container__item box--7">Box 7</div>
-          <div class="grid-container__item box--8">Box 8</div>
-          <div class="grid-container__item box--9">Box 9</div>
-        </div>
-      </section>
-
-    <section class="commercial">
       <h1 class="primary-heading">
-        <span>Comercial</span>
+        <span>Bienvenido</span>
       </h1>
       <p class="paragraph">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nam voluptatem fugit inventore magni recusandae rerum numquam quos, veritatis quam harum animi vitae. Ratione voluptates suscipit laborum error tempore autem!
       </p>
+      <% if(props.length > 0) { %>
+      <div class="property-grid-container">
+        <% for(let property of props) { %>
+        <article class="property-grid-container__item">
+          <img class="property__image" src="<%= property.imagen_Url %>"" alt="Property image">
+          <div class="property__detail">
+            <h2 class="property__price">$ <%= property.precio %></h2>
+            <p class="property__subcategory"> <%= property.subcategoria%> </p>
+            <p class="property__address">
+                <%= property.calle_y_numero %>
+            </p>
+            <p class="property__category"> <%= property.category %> </p>
+            <p class="property__description">
+                <%= property.descripcion %>
+            </p>
+          
+          </div>
+        </article>
+        <% } %>
+      </div>
+      <% } else { %>
+        <h1>No se encontraron propiedades</h1>
+      <% } %>
     </section>
-  </main>
 
-  </header>
-
-  <main>
 
   </main>
 
+  <%- include('../includes/end.ejs') %>
 
 
-</body>
-</html>
+
+
+
         

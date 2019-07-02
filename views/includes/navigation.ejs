@@ -1,8 +1,9 @@
-<nav class="primary-nav">
-    <ul class="primary-nav__list">
-        <li class="primary-nav__item"><a href="/" class="primary-nav__link">Inicio</a></li>
-        <li class="primary-nav__item"><a href="/properties-list" class="primary-nav__link">Propiedades</a></li>
-        <li class="primary-nav__item"><a href="/about" class="primary-nav__link">Nosotros</a></li>
-        <li class="primary-nav__item"><a href="/contact" class="primary-nav__link">Contacto</a></li>
-    </ul>
-</nav>
+<nav class="primary-nav util__wrapper">
+    <div class="primary-nav__right">
+      <ul class="primary-nav__list">
+          <li class="primary-nav__item"><a href="/" class="primary-nav__link <%= path === '/' ? 'primary-nav__link--active' : '' %>">Inicio</a></li>
+          <li class="primary-nav__item"><a href="/admin/add-property" class="primary-nav__link <%= path === '/admin/add-property' ? 'primary-nav__link--active' : '' %>">Añadir propiedad</a></li>
+          <li class="primary-nav__item"><a href="/admin/properties-list" class="primary-nav__link <%= path === '/admin/properties-list' ? 'primary-nav__link--active' : '' %>">Admin propiedades</a></li>
+      </ul>
+    </div>
+  </nav>

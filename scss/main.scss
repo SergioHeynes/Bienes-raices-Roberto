@@ -8,11 +8,12 @@
 @import 'base/typography';
 @import 'base/util';
 
-@import 'components/grid-container';
+@import 'components/property-grid-container';
 
 @import 'layout/primary-nav';
-@import 'layout/large-hero';
+@import 'layout/form-property';
 
 @import 'pages/home';
+@import 'pages/add-property.scss';
 
 

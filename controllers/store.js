@@ -1,3 +1,19 @@
-exports.getAddProperty = (req, res, next) => {
-    res.send('<form action="/admin/add-property" method="POST"><input type="text" name="title"><button type="submit">Add product</button>');
+const Property = require('../models/property');
+
+exports.getProperties = (req, res, next) => {
+  Property.findAll()
+  .then(properties => {
+    res.render('store/index', { 
+      pageTitle: 'Inicio',
+      props: properties,
+      path: '/'
+    });
+  })
+  .catch(err => {
+    console.log(err);
+  });
+
+
+
+
 }

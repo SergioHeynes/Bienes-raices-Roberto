@@ -1,0 +1,19 @@
+.property-grid-container {
+    margin: 0 auto;
+    max-width: 144rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem 4rem;
+
+    &__item {
+        max-width: 95%;
+    }
+}
+
+.property {
+    &__image {
+        width: 100%;
+    }
+}
+

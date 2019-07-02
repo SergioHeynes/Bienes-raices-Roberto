@@ -1,18 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <title>RH | Bienes Raíces</title>
+<%- include('../includes/head.ejs') %>
 
-    <link href="https://fonts.googleapis.com/css?family=Ovo|Quattrocento+Sans:400,700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8dec48132d.js"></script>
-    <link rel="stylesheet" href="styles/styles.css" />
 
-  </head>
-  <body>
-      <h2>Añadir propiedades</h2>
-  </body>
-</html>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+  <section class="add-property">
+      <form class="form-property" action="/admin/add-property" method="POST">
+
+        <div class="form-property__group">
+          <label class="form-property__label" for="street">Calle y número</label>
+          <input class="form-property__input" type="text" name="street" id="street">
+        </div>
+          
+        <div class="form-property__group">
+          <label class="form-property__label" for="subburb">Colonia o fraccionamiento</label>
+          <input class="form-property__input" type="text" name="subburb" id="subburb">
+        </div>
+      
+        <div class="form-property__group">
+          <label class="form-property__label" for="category">Categoría</label>
+          <input class="form-property__input" type="text" name="category" id="category">
+        </div>
+      
+        <div class="form-property__group">
+          <label class="form-property__label" for="subcategory">Subcategoría</label>
+          <input class="form-property__input" type="text" name="subcategory" id="subcategory">
+        </div>
+      
+        <div class="form-property__group">
+          <label class="form-property__label" for="imageUrl">Imagen URL</label>
+          <input class="form-property__input" type="text" name="imageUrl" id="imageUrl">
+        </div>
+      
+        <div class="form-property__group">
+          <label class="form-property__label" for="description">Descripción</label>
+          <textarea class="form-property__textarea" name="description" id="description" cols="60" rows="8"></textarea>
+        </div>
+
+        <div class="form-property__group">
+          <label class="form-property__label" for="price">Precio</label>
+          <input class="form-property__input" type="text" name="price" id="price">
+        </div>
+
+      <button type="submit">Añadir</button>
+      </form>
+  </section>
+</main>
+
+
+
+<%- include('../includes/end.ejs') %>

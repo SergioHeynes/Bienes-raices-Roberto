@@ -1,20 +1,13 @@
 const express = require('express');
 
+const adminController = require('../controllers/admin');
+
 const router = express.Router();
 
+router.get('/add-property', adminController.getAddProperty);
 
-router.get('/add-property', (req, res, next) => {
-    res.send('<form action="/admin/add-property" method="POST"><input type="text" name="title"><button type="submit">Add product</button>');
-});
+router.post('/add-property', adminController.postAddProperty);
 
-router.post('/add-property', (req, res, next) => {
-    console.log(req.body);
-    res.redirect('/');
-});
-
-router.get('/edit-property', (req, res, next) => {
-    res.render('admin/edit-property');
-});
-
+router.get('/properties-list', adminController.getPropertiesList);
 
 module.exports = router;

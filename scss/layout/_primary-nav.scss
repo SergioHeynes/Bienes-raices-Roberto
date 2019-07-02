@@ -43,5 +43,11 @@
     &__link {
         text-decoration: none;
         color: $color-black;
+
+        &--active {
+            border-bottom: 2px solid $color-blue;
+        }
     }
+
+
 }
